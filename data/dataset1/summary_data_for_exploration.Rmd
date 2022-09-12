@@ -1,0 +1,19 @@
+---
+title: "summary_data"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r }
+# load amsterdam summary data
+
+download.file('http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-06-05/visualisations/listings.csv', destfile = 'ams.csv')
+library(tidyverse)
+df <- read_csv('ams.csv')
+```
+
