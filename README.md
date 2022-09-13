@@ -1,5 +1,4 @@
 # Research question
-How do Formula 1 race weekends influence the (price, reviews) on Airbnb?
 
 How do Formula 1 race weekends influence the price on Airbnb?
 
