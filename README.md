@@ -1,6 +1,17 @@
 # Research question
 How do Formula 1 race weekends influence the (price, reviews) on Airbnb?
 
+How do Formula 1 race weekends influence the price on Airbnb?
+
+
+# Motivation 
+
+We expect that the prices of listings on Airbnb will increase in the weekend when there is a Formula 1 race because the demand will increase and thus the hosts of the Airbnb can charge a higher price for their listings. 
+The data of the following cities will be used to test the research question:
+-	Melbourne
+-	Barcelona
+-	Montreal
+
 
 # Example of reproducible research workflow 
 
