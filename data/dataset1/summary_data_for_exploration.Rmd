@@ -24,3 +24,58 @@ madrid = c('http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/da
 datasets_madrid <- lapply(madrid, read_csv, n_max = 200)
 ```
 
+
+
+# Exploring the data
+
+```{r }
+# rename columns
+
+```
+
+
+```{r }
+# rename into date
+
+```
+
+
+```{r }
+# adding new columns
+
+
+```
+
+
+```{r }
+# adding new columns
+columns <- c('retail_and_recreation', 'grocery_and_pharmacy', 'parks', 'transit_stations', 'workplaces', 'residential')
+mobility <- mobility %>% mutate(avg_mobility2 = rowMeans(select(., columns), na.rm =TRUE))
+
+```
+
+
+
+```{r }
+# Make a subset of the data
+```
+
+
+```{r }
+# Make a function to get the subset of all the data
+
+```
+
+
+```{r }
+# Make a function to get the subset of all the data
+
+```
+
+
+
+```{r }
+# Make a function to get the subset of all the data
+
+```
+
