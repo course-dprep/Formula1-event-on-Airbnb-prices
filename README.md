@@ -7,7 +7,6 @@ Formula 1 race weekends causes a lot of fans travelling to the city where the ra
 The data of the following cities will be used to test the research question:
 -	Melbourne will be compared with Sydney on 8-10 of April
 -	Barcelona will be compared with Madrid on 20-22 of May
--	Montreal will be compared with Toronto on 17-19 of June
 
 
 # Structure of the repository
