@@ -2,14 +2,12 @@
 
 How do Formula 1 race weekends influence the price on Airbnb?
 
-
 # Motivation 
-
-We expect that the prices of listings on Airbnb will increase in the weekend when there is a Formula 1 race because the demand will increase and thus the hosts of the Airbnb can charge a higher price for their listings. 
+Formula 1 race weekends causes a lot of fans travelling to the city where the race takes place. Therefore these weekends can cause a busy time for Airbnb hosts because all these fans need a place to stay. This will create a higher demand and thus the hosts of the Airbnb’s can charge a higher price for their listing compared to other weekends when there is no Formula 1 race. This project aims to compare the prices of Airbnb’s in cities where the Formula 1 race will take place and cities where there is no Formula 1 race at the same moment in time. 
 The data of the following cities will be used to test the research question:
--	Melbourne
--	Barcelona
--	Montreal
+-	Melbourne will be compared with Sydney on 8-10 of April
+-	Barcelona will be compared with Madrid on 20-22 of May
+-	Montreal will be compared with Toronto on 17-19 of June
 
 
 # Structure of the repository
