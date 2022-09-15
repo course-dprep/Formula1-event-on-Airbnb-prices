@@ -13,21 +13,15 @@ The data of the following cities will be used to test the research question:
 # Structure of the repository
 
 ├── README.md
-├── data <- This is the place to store raw data 
-├── gen 
-│   ├── output
-│   └── temp
-├── makefile
-└── src  
-    ├── analysis
-    │   ├── data_exploration.Rmd
-    │   ├── makefile
-    │   └── regression_analysis.Rmd
-    └── data-preparation
-        ├── cleaning.R
-        ├── download.R
-        ├── install_r_packages.R
-        └── makefile
+├── data
+├── gen
+│   ├── analysis
+│   ├── data-preparation
+│   └── paper
+└── src
+   ├── analysis
+   ├── data-preparation
+   └── paper
 
 
 
