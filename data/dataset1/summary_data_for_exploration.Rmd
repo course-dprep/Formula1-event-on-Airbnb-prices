@@ -10,10 +10,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r }
-# load amsterdam summary data
-
-download.file('http://data.insideairbnb.com/the-netherlands/north-holland/amsterdam/2022-06-05/visualisations/listings.csv', destfile = 'ams.csv')
 library(tidyverse)
-df <- read_csv('ams.csv')
+melbourne = c('http://data.insideairbnb.com/australia/vic/melbourne/2022-09-09/data/listings.csv.gz', 'http://data.insideairbnb.com/australia/vic/melbourne/2022-09-09/data/calendar.csv.gz', 'http://data.insideairbnb.com/australia/vic/melbourne/2022-09-09/data/reviews.csv.gz')
+datasets_melbourne <- lapply(melbourne, read_csv, n_max = 200)
+
+sydney = c('http://data.insideairbnb.com/australia/nsw/sydney/2022-09-09/data/listings.csv.gz', 'http://data.insideairbnb.com/australia/nsw/sydney/2022-09-09/data/calendar.csv.gz', 'http://data.insideairbnb.com/australia/nsw/sydney/2022-09-09/data/reviews.csv.gz')
+datasets_sydney <- lapply(sydney, read_csv, n_max = 200)
+
+barcelona = c('http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/listings.csv.gz', 'http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/calendar.csv.gz', 'http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/reviews.csv.gz')
+datasets_barcelona <- lapply(barcelona, read_csv, n_max = 200)
+
+madrid = c('http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/listings.csv.gz', 'http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/calendar.csv.gz', 'http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/reviews.csv.gz')
+datasets_madrid <- lapply(madrid, read_csv, n_max = 200)
 ```
 
