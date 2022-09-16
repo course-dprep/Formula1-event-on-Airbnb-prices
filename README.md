@@ -10,7 +10,7 @@ The data of the following cities will be used to test the research question:
 
 
 # Structure of the repository
-
+```
 ├── README.md
 ├── data
 ├── gen
@@ -21,7 +21,7 @@ The data of the following cities will be used to test the research question:
    ├── analysis
    ├── data-preparation
    └── paper
-
+```
 
 
 
