@@ -25,9 +25,32 @@ datasets_madrid <- lapply(madrid, read_csv, n_max = 200)
 ```
 
 
+```{r }
+#head statements for all listings
+head(datasets_melbourne[1])
+head(datasets_sydney[1])
+head(datasets_barcelona[1])
+head(datasets_madrid[1])
+
+```
+
+
+# make table
+```{r }
+# summary
+```
+
+
+
+# make table
+```{r }
+# summary
+```
+
+
+
 
 # Exploring the data
-
 ```{r }
 # rename columns
 
@@ -64,6 +87,7 @@ mobility <- mobility %>% mutate(avg_mobility2 = rowMeans(select(., columns), na.
 ```{r }
 # Make a function to get the subset of all the data
 
+
 ```
 
 
@@ -71,7 +95,6 @@ mobility <- mobility %>% mutate(avg_mobility2 = rowMeans(select(., columns), na.
 # Make a function to get the subset of all the data
 
 ```
-
 
 
 ```{r }
