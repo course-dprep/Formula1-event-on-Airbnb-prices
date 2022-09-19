@@ -11,16 +11,105 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r }
 library(tidyverse)
+n_max = inf # Inf
+
 melbourne = c('http://data.insideairbnb.com/australia/vic/melbourne/2022-09-09/data/listings.csv.gz', 'http://data.insideairbnb.com/australia/vic/melbourne/2022-09-09/data/calendar.csv.gz', 'http://data.insideairbnb.com/australia/vic/melbourne/2022-09-09/data/reviews.csv.gz')
-datasets_melbourne <- lapply(melbourne, read_csv, n_max = 200)
+datasets_melbourne <- lapply(melbourne, read_csv, n_max = n_max)
 
 sydney = c('http://data.insideairbnb.com/australia/nsw/sydney/2022-09-09/data/listings.csv.gz', 'http://data.insideairbnb.com/australia/nsw/sydney/2022-09-09/data/calendar.csv.gz', 'http://data.insideairbnb.com/australia/nsw/sydney/2022-09-09/data/reviews.csv.gz')
-datasets_sydney <- lapply(sydney, read_csv, n_max = 200)
+datasets_sydney <- lapply(sydney, read_csv, n_max = n_max)
 
 barcelona = c('http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/listings.csv.gz', 'http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/calendar.csv.gz', 'http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/reviews.csv.gz')
-datasets_barcelona <- lapply(barcelona, read_csv, n_max = 200)
+datasets_barcelona <- lapply(barcelona, read_csv, n_max = n_max)
 
 madrid = c('http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/listings.csv.gz', 'http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/calendar.csv.gz', 'http://data.insideairbnb.com/spain/catalonia/barcelona/2022-06-07/data/reviews.csv.gz')
-datasets_madrid <- lapply(madrid, read_csv, n_max = 200)
+datasets_madrid <- lapply(madrid, read_csv, n_max = n_max)
 ```
+
+
+```{r }
+#head statements for all listings
+head(datasets_melbourne[[1]])
+head(datasets_sydney[1])
+head(datasets_barcelona[1])
+head(datasets_madrid[1])
+```
+
+# make summary
+```{r }
+lapply(datasets_madrid, summary)
+
+```
+
+
+# make function that does summary for all objects
+```{r }
+for (ds in datasets_madrid) {
+  #summary_statistics <- 
+  #lapply(datasets_madrid, summary)
+  summary_statistics = summary(ds)
+  print(summary_statistics)
+}
+```
+
+
+```{r }
+# combine all calendar dataframes
+all_calendar <-  bind_rows(cbind(city='madrid', datasets_madrid[[2]]), 
+                 cbind(city='barcelona',datasets_barcelona[[2]]),
+                 cbind(city='melbourne',datasets_melbourne[[2]]),
+                 cbind(city='sydney',datasets_sydney[[2]]))
+```
+
+
+```{r }
+# combine all calendar dataframes
+all_listings <-  bind_rows(cbind(city='madrid', datasets_madrid[[1]]), 
+                 cbind(city='barcelona',datasets_barcelona[[1]]),
+                 cbind(city='melbourne',datasets_melbourne[[1]]),
+                 cbind(city='sydney',datasets_sydney[[1]]))
+```
+
+
+
+```{r }
+# change column names
+colnames(all_calendar)[2] <- "id"
+```
+
+
+```{r }
+# join datasets
+library(dplyr)
+all_data <- full_join(all_calendar, all_listings, "id")
+
+```
+
+```{r }
+# convert into right date format 
+
+```
+
+
+
+```{r }
+# make summary plot of all prices of all cities throughout the year 2022
+
+```
+
+
+
+
+```{r }
+# What to filter
+
+
+# alle data ver in de toekomst
+# niet nuttige variableen  bijv. listings, host info, picture url, latitude/longtitude
+```
+
+
+
+
+
 
