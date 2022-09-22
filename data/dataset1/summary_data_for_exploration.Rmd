@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 install.packages("sqldf")
 library(sqldf)
-n_max = 200 # Inf
+n_max = Inf # Inf
 
 
 melbourne = c('http://data.insideairbnb.com/australia/vic/melbourne/2022-03-09/data/listings.csv.gz', 'http://data.insideairbnb.com/australia/vic/melbourne/2022-03-09/data/calendar.csv.gz', 'http://data.insideairbnb.com/australia/vic/melbourne/2022-03-09/data/reviews.csv.gz')
@@ -66,7 +66,7 @@ all_calendar <-  bind_rows(cbind(city='madrid', datasets_madrid[[2]]),
 
 
 ```{r }
-# combine all calendar dataframes
+# combine all listing dataframes
 all_listings <-  bind_rows(cbind(city='madrid', datasets_madrid[[1]]), 
                  cbind(city='barcelona',datasets_barcelona[[1]]),
                  cbind(city='melbourne',datasets_melbourne[[1]]),
@@ -89,10 +89,18 @@ all_data <- full_join(all_calendar, all_listings, "id")
 ```
 
 ```{r }
-# filter on date (delete all after June)
+# filter on date (delete all after June)(calendar dataset)
+library(dplyr)
+all_calendar <- all_calendar %>% filter(between(date, as.Date('2022-03-25'), as.Date('2022-06-05')))
+
+```
+
+```{r}
+# filter on date (delete all after June)(listings dataset)
 library(dplyr)
 all_data <- all_data %>% filter(between(date, as.Date('2022-03-25'), as.Date('2022-06-05')))
 
+```
 ```
 
 ```{r}
@@ -102,6 +110,23 @@ drop <- c("listing_url", "scrape_id", "last_scraped", "description", "neighborho
 data_without_dropped_columns <- all_data[ , !(names(all_data) %in% drop)]
   
 ```
+
+```{r}
+# filter columns
+drop_2 <- c("available", "adjusted_price", "host_is_superhost", "host_neighborhood", "host_verifications", "bedrooms", "beds", "amenities", "minimum_nights_avg_ntm", "maximum_nights_avg_ntm", "has_availability", "number_of_reviews", "review_scores_accuracy", "review_scores_cleanliness", "review_scores_checkin", "review_scores_communication", "review_scores_location", "review_scores_value", "reviews_per_month")
+
+data_we_will_use <- data_without_dropped_columns[ , !(names(data_without_dropped_columns) %in% drop_2)]
+```
+
+```{r}
+#Saving new dataset
+write.csv(data_we_will_use,'Filtered F1 Data.csv')
+```
+
+```{r}
+Filtered_F1_Data <- read_csv("Filtered_F1_Data.csv")
+```
+
 
 
 ```{r }
@@ -117,7 +142,7 @@ data_without_dropped_columns <- all_data[ , !(names(all_data) %in% drop)]
 
 
 # alle data ver in de toekomst (done)
-# niet nuttige variableen  bijv. listings, host info, picture url, latitude/longtitude
+# niet nuttige variaelen  bijv. listings, host info, picture url, latitude/longtitude
 ```
 
 
