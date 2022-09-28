@@ -1,9 +1,11 @@
+library(dplyr)
 # Load datasets into R 
-df1 <- read.csv("./gen/data-preparation/input/dataset1.csv")
-df2 <- read.csv("./gen/data-preparation/input/dataset2.csv")
+all_listings <- read.csv("all_listings.csv")
+all_calendar <- read.csv("all_calendar.csv")
 
+colnames(all_calendar)[2] <- "id"
 # Merge on id
-df_merged <- merge(df1,df2,by="id")
+merged_airbnb_data <- full_join(all_calendar, all_listings, "id")
 
 # Save merged data
-save(df_merged,file="./gen/data-preparation/temp/data_merged.RData")
+write.csv(merged_airbnb_data, "merged_airbnb_data.csv")
