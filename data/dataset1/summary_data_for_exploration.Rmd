@@ -149,7 +149,6 @@ Filtered_F1_Data <- read_csv("Filtered_F1_Data.csv")
 
 
 
-
 ```{r }
 # What to filter
 
