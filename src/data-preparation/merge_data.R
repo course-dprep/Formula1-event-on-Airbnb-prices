@@ -1,7 +1,7 @@
 library(dplyr)
 # Load datasets into R 
-all_listings <- read.csv("all_listings.csv")
-all_calendar <- read.csv("all_calendar.csv")
+all_listings <- read.csv("../../data/all_listings.csv")
+all_calendar <- read.csv("../../data/all_calendar.csv")
 
 # Delete automatic generated column "X"
 all_listings <- subset(all_listings, select = -c(X))
@@ -14,4 +14,4 @@ colnames(all_calendar)[2] <- "id"
 merged_airbnb_data <- full_join(all_calendar, all_listings, "id")
 
 # Save merged data
-write.csv(merged_airbnb_data, "merged_airbnb_data.csv")
+write.csv(merged_airbnb_data, "../../gen/data-preparation/temp/merged_airbnb_data.csv")
