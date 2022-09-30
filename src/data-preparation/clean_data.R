@@ -1,7 +1,7 @@
 library(dplyr)
 library(readr)
 # Load merged data 
-merged_airbnb_data <- read_csv("merged_airbnb_data.csv", col_types = cols(price.x = col_number()))
+merged_airbnb_data <- read_csv("../../gen/data-preparation/temp/merged_airbnb_data.csv", col_types = cols(price.x = col_number()))
 
 # Delete automatic generated column "...1"
 merged_airbnb_data <- subset(merged_airbnb_data, select = -c(...1))
@@ -20,4 +20,4 @@ drop <- c("listing_url", "scrape_id", "last_scraped", "description", "neighborho
 data_without_dropped_columns <- all_data[ , !(names(all_data) %in% drop)]
 
 # Save cleaned data
-write.csv(data_without_dropped_columns, "cleaned_airbnb_data.csv")
+write.csv(data_without_dropped_columns, "../../gen/data-preparation/temp/cleaned_airbnb_data.csv")
