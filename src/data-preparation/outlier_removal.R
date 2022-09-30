@@ -1,6 +1,6 @@
 library(dplyr)
 
-cleaned_airbnb_data <- read.csv("cleaned_airbnb_data.csv")
+cleaned_airbnb_data <- read.csv("../../gen/data-preparation/temp/cleaned_airbnb_data.csv")
 
 # Delete automatic generated column "X"
 cleaned_airbnb_data <- subset(cleaned_airbnb_data, select = -c(X))
@@ -24,5 +24,5 @@ cleaned_airbnb_data_without_outliers <- cleaned_airbnb_data %>% filter(price > L
 cleaned_airbnb_data_without_outliers %>% 
   summarise_all(~sum(is.na(.)))
 
-write.csv(cleaned_airbnb_data_without_outliers, "final_airbnb_dataset.csv")
+write.csv(cleaned_airbnb_data_without_outliers, "../../gen/data-preparation/output/final_airbnb_dataset.csv")
 
