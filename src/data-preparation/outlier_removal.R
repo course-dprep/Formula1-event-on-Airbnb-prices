@@ -11,8 +11,8 @@ cleaned_airbnb_data <- subset(cleaned_airbnb_data, select = -c(X))
 
 
 # remove the outliers
-quartiles <- quantile(cleaned_airbnb_data$price, probs=c(.25, .75), na.rm = FALSE)
-IQR <- IQR(cleaned_airbnb_data$price)
+quartiles <- quantile(cleaned_airbnb_data$price, probs=c(.25, .75), na.rm = TRUE)
+IQR <- IQR(cleaned_airbnb_data$price, na.rm = TRUE)
 
 Lower <- quartiles[1] - 1.5*IQR
 Upper <- quartiles[2] + 1.5*IQR 
@@ -21,8 +21,8 @@ cleaned_airbnb_data_without_outliers <- cleaned_airbnb_data %>% filter(price > L
 
 
 # NA's all columns
-cleaned_airbnb_data_without_outliers %>% 
-  summarise_all(~sum(is.na(.)))
+#cleaned_airbnb_data_without_outliers %>% 
+  #summarise_all(~sum(is.na(.)))
 
 write.csv(cleaned_airbnb_data_without_outliers, "../../gen/data-preparation/output/final_airbnb_dataset.csv")
 
