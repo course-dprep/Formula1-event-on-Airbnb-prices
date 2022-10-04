@@ -3,12 +3,18 @@ TEMP = ../../gen/data-preparation/temp
 OUTPUT = ../../gen/data-preparation/output
 INPUT = ../../gen/data_preparation/input
 
-all: $(DATA)/all_listings.csv $(DATA)/all_calendar.csv $(TEMP)/merged_airbnb_data.csv $(TEMP)/cleaned_airbnb_data.csv $(OUTPUT)/final_airbnb_dataset.csv
-	
-$(DATA)/all_listings.csv $(DATA)/all_calendar.csv: download_data.R 
+all: $(DATA)/listings_melbourne.csv $(DATA)/listings_sydney.csv $(DATA)/listings_barcelona.csv	$(DATA)/listings_madrid.csv $(DATA)/calendar_melbourne.csv $(DATA)/calendar_sydney.csv $(DATA)/calendar_barcelona.csv $(DATA)/calendar_madrid.csv $(TEMP)/cleaned_list_mel.csv $(TEMP)/cleaned_list_syd.csv $(TEMP)/cleaned_list_bar.csv $(TEMP)/cleaned_list_mad.csv $(TEMP)/cleaned_cal_mel.csv $(TEMP)/cleaned_cal_syd.csv $(TEMP)/cleaned_cal_bar.csv $(TEMP)/cleaned_cal_mad.csv $(TEMP)/all_listings.csv $(TEMP)/all_calendar.csv $(TEMP)/merged_airbnb_data.csv $(TEMP)/cleaned_airbnb_data.csv $(OUTPUT)/final_airbnb_dataset.csv
+
+$(DATA)/listings_melbourne.csv $(DATA)/listings_sydney.csv $(DATA)/listings_barcelona.csv	$(DATA)/listings_madrid.csv $(DATA)/calendar_melbourne.csv $(DATA)/calendar_sydney.csv $(DATA)/calendar_barcelona.csv $(DATA)/calendar_madrid.csv: download_data.R
 	R --vanilla < download_data.R
+
+$(TEMP)/cleaned_list_mel.csv $(TEMP)/cleaned_list_syd.csv $(TEMP)/cleaned_list_bar.csv $(TEMP)/cleaned_list_mad.csv $(TEMP)/cleaned_cal_mel.csv $(TEMP)/cleaned_cal_syd.csv $(TEMP)/cleaned_cal_bar.csv $(TEMP)/cleaned_cal_mad.csv:data_without_dropped_columns.R $(DATA)/listings_melbourne.csv $(DATA)/listings_sydney.csv $(DATA)/listings_barcelona.csv	$(DATA)/listings_madrid.csv $(DATA)/calendar_melbourne.csv $(DATA)/calendar_sydney.csv $(DATA)/calendar_barcelona.csv $(DATA)/calendar_madrid.csv
+	R --vanilla < data_without_dropped_columns.R
 	
-$(TEMP)/merged_airbnb_data.csv: merge_data.R $(DATA)/all_listings.csv $(DATA)/all_calendar.csv
+$(TEMP)/all_calendar.csv $(TEMP)/all_listings.csv: merge_all_calendar_and_all_listings.R $(TEMP)/cleaned_list_mel.csv $(TEMP)/cleaned_list_syd.csv $(TEMP)/cleaned_list_bar.csv $(TEMP)/cleaned_list_mad.csv $(TEMP)/cleaned_cal_mel.csv $(TEMP)/cleaned_cal_syd.csv $(TEMP)/cleaned_cal_bar.csv $(TEMP)/cleaned_cal_mad.csv
+	R --vanilla < merge_all_calendar_and_all_listings.R
+	
+$(TEMP)/merged_airbnb_data.csv: merge_data.R $(TEMP)/all_listings.csv $(TEMP)/all_calendar.csv
 	R --vanilla < merge_data.R
 
 $(TEMP)/cleaned_airbnb_data.csv: clean_data.R $(TEMP)/merged_airbnb_data.csv
