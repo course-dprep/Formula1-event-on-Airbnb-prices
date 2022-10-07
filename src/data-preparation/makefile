@@ -3,7 +3,7 @@ TEMP = ../../gen/data-preparation/temp
 OUTPUT = ../../gen/data-preparation/output
 INPUT = ../../gen/data_preparation/input
 
-all: $(DATA)/listings_melbourne.csv $(DATA)/listings_sydney.csv $(DATA)/listings_barcelona.csv	$(DATA)/listings_madrid.csv $(DATA)/calendar_melbourne.csv $(DATA)/calendar_sydney.csv $(DATA)/calendar_barcelona.csv $(DATA)/calendar_madrid.csv $(TEMP)/cleaned_list_mel.csv $(TEMP)/cleaned_list_syd.csv $(TEMP)/cleaned_list_bar.csv $(TEMP)/cleaned_list_mad.csv $(TEMP)/cleaned_cal_mel.csv $(TEMP)/cleaned_cal_syd.csv $(TEMP)/cleaned_cal_bar.csv $(TEMP)/cleaned_cal_mad.csv $(TEMP)/all_listings.csv $(TEMP)/all_calendar.csv $(TEMP)/merged_airbnb_data.csv $(TEMP)/cleaned_airbnb_data.csv $(OUTPUT)/final_airbnb_dataset.csv
+all: $(DATA)/listings_melbourne.csv $(DATA)/listings_sydney.csv $(DATA)/listings_barcelona.csv	$(DATA)/listings_madrid.csv $(DATA)/calendar_melbourne.csv $(DATA)/calendar_sydney.csv $(DATA)/calendar_barcelona.csv $(DATA)/calendar_madrid.csv $(TEMP)/cleaned_list_mel.csv $(TEMP)/cleaned_list_syd.csv $(TEMP)/cleaned_list_bar.csv $(TEMP)/cleaned_list_mad.csv $(TEMP)/cleaned_cal_mel.csv $(TEMP)/cleaned_cal_syd.csv $(TEMP)/cleaned_cal_bar.csv $(TEMP)/cleaned_cal_mad.csv $(TEMP)/all_listings.csv $(TEMP)/all_calendar.csv $(TEMP)/merged_airbnb_data.csv $(TEMP)/cleaned_airbnb_data.csv $(OUTPUT)/final_airbnb_dataset.csv $(OUTPUT)/filtered_spain.csv $(OUTPUT)/filtered_australia.csv
 
 $(DATA)/listings_melbourne.csv $(DATA)/listings_sydney.csv $(DATA)/listings_barcelona.csv	$(DATA)/listings_madrid.csv $(DATA)/calendar_melbourne.csv $(DATA)/calendar_sydney.csv $(DATA)/calendar_barcelona.csv $(DATA)/calendar_madrid.csv: download_data.R
 	R --vanilla < download_data.R
@@ -22,6 +22,10 @@ $(TEMP)/cleaned_airbnb_data.csv: clean_data.R $(TEMP)/merged_airbnb_data.csv
 
 $(OUTPUT)/final_airbnb_dataset.csv: outlier_removal.R $(TEMP)/cleaned_airbnb_data.csv
 	R --vanilla < outlier_removal.R
+	
+$(OUTPUT)/filtered_spain.csv $(OUTPUT)/filtered_australia.csv: final_prep_analysis.R $(OUTPUT)/final_airbnb_dataset.csv 
+	R --vanilla < final_prep_analysis.R
+
 
 clean:
 	R -e "unlink('*.pdf')"
