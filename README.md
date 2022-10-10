@@ -3,9 +3,9 @@
 
 
 # Project description
-Formula 1 is becoming a more popular sport every year, with weekend attendaces of more than 300,000 visitors in many cities around the world (SOURCE?). Many of those visitors are from all over the world and are in need of an accommadation for the weekend. Hotels are quickly booked up for the weekend, so the F1 fans are looking for other options. Airbnb listings are an afforable option and it feels a lot like home, with among others, kitchens and livingrooms.
+Formula 1 is becoming a more popular sport every year, with weekend attendaces of hundreds of thousands of visitors in many cities around the world, with a record of around 420,00 visitors in Melbourne, Australia(ESPN, 2022). Many of those visitors are from all over the world and are in need of an accommadation for the weekend. Hotels are quickly booked up for the weekend, so the F1 fans are looking for other options. Airbnb listings are an afforable option and it feels a lot like home, with among others, kitchens and livingrooms.
 
-We were, however, curious if the prices were significanlty higher in those weekends compared to other weekends in the same city. Hotels change their prices a lot in the peak season(SOURCE?), so it would make sense Airbnb listers to the same thing. That's why we are conducting a research on the price infleunces of a Formula 1 event on Airbnb listings. We attempt to answer the following research question:
+We were, however, curious if the prices were significanlty higher in those weekends compared to other weekends in the same city. Hotels change their prices a lot in the peak season, so it would make sense Airbnb listers to the same thing. That's why we are conducting a research on the price infleunces of a Formula 1 event on Airbnb listings. We attempt to answer the following research question:
 
 **"To what extent does the presence of a Formula 1 race weekend influence the prices of Airbnb listings in the respective city?"**
 
@@ -42,7 +42,6 @@ With the obtained data, explored and prepared by our team,  we came to the follo
 The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project. In this example project, the following is done: 
 1. Download and prepare data
 2. Run some analysis
-3. Present results in a final pdf generated using LaTeX
 
 # Dependencies
 - R 
@@ -61,7 +60,7 @@ Sidenotes:
 
 ## Sources
 - Insideairbnb
-- 
+- ESPN (https://www.espn.com/f1/story/_/id/33710400/australian-grand-prix-sets-new-formula-one-melbourne-sporting-attendance-records)
 
 ## Notes
 - `make clean` removes all unncessary temporary files (.csv, .pdf).  
