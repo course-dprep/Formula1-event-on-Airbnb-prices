@@ -7,8 +7,10 @@ all_calendar <- read.csv("../../gen/data-preparation/temp/all_calendar.csv")
 all_listings <- subset(all_listings, select = -c(X, X.1))
 all_calendar <- subset(all_calendar, select = -c(X, X.1))
 
+
 # Change column name of "listing_id" to "id"
-colnames(all_calendar)[2] <- "id"
+View(all_calendar)
+colnames(all_calendar)[which(names(all_calendar) == "listing_id")] <- "id"
 
 # Merge on id
 merged_airbnb_data <- full_join(all_calendar, all_listings, "id")
