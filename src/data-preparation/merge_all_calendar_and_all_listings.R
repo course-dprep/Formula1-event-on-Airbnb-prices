@@ -1,4 +1,5 @@
 library(dplyr)
+library(tidyverse)
 
 # load all cleaned listings csv's containing only the necessary columns
 listings_melbourne <- read.csv("../../gen/data-preparation/temp/cleaned_list_mel.csv")
