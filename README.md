@@ -1,12 +1,25 @@
-# Research question
+# How the popularity of F1 influences the prices of Airbnb listings in different cities
+![image](https://user-images.githubusercontent.com/109277196/194825057-e42f7bf1-74fb-40be-ab0a-332552b59e9a.png)
 
-How do Formula 1 race weekends influence the price on Airbnb?
 
-# Motivation 
-Formula 1 race weekends causes a lot of fans travelling to the city where the race takes place. Therefore these weekends can cause a busy time for Airbnb hosts because all these fans need a place to stay. This will create a higher demand and thus the hosts of the Airbnb’s can charge a higher price for their listing compared to other weekends when there is no Formula 1 race. This project aims to compare the prices of Airbnb’s in cities where the Formula 1 race will take place and cities where there is no Formula 1 race at the same moment in time. 
+# Project description
+Formula 1 is becoming a more popular sport every year, with weekend attendaces of more than 300,000 visitors in many cities around the world (SOURCE?). Many of those visitors are from all over the world and are in need of an accommadation for the weekend. Hotels are quickly booked up for the weekend, so the F1 fans are looking for other options. Airbnb listings are an afforable option and it feels a lot like home, with among others, kitchens and livingrooms.
+
+We were, however, curious if the prices were significanlty higher in those weekends compared to other weekends in the same city. Hotels change their prices a lot in the peak season(SOURCE?), so it would make sense Airbnb listers to the same thing. That's why we are conducting a research on the price infleunces of a Formula 1 event on Airbnb listings. We attempt to answer the following research question:
+
+**"To what extent does the presence of a Formula 1 race weekend influence the prices of Airbnb listings in the respective city?"**
+
+# Analysis
+This project aims to compare the prices of Airbnb’s in cities where the Formula 1 race will take place and cities where there is no Formula 1 race (in the same country and around the same size) at the same moment in time. This way we can check if the prices are not influenced by other factors, like it is just a busier weekend. 
 The data of the following cities will be used to test the research question:
--	Melbourne will be compared with Sydney on 8-10 of April
--	Barcelona will be compared with Madrid on 20-22 of May
+-	Melbourne (F1 race) will be compared with Sydney (No F1 race) on 8-10 of April
+-	Barcelona (F1 race) will be compared with Madrid (No F1 Race) on 20-22 of May
+We wil also consider the influence of time in the analysis by looking at the ... previous weekends and the ... weekends after the race weekend. 
+
+## Analysis results
+With the obtained data, explored and prepared by our team,  we came to the following findings and conclusions:
+
+- 
 
 
 # Structure of the repository
