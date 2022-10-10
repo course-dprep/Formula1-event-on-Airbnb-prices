@@ -20,7 +20,8 @@ We wil also consider the influence of time in the analysis by looking at the ...
 With the obtained data, explored and prepared by our team,  we came to the following findings and conclusions:
 
 - 
-
+-
+-
 
 # Structure of the repository
 ```
@@ -36,28 +37,39 @@ With the obtained data, explored and prepared by our team,  we came to the follo
    └── paper
 ```
 
-
-
 # Example of reproducible research workflow 
 
-This is a basic example repository using Gnu make for a reproducible research workflow, as described in detail here: [tilburgsciencehub.com](http://tilburgsciencehub.com/). 
-
-The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project.  In this example project, the following is done: 
+The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project. In this example project, the following is done: 
 1. Download and prepare data
 2. Run some analysis
 3. Present results in a final pdf generated using LaTeX
 
-## Dependencies
+# Dependencies
 - R 
-- R packages: `install.packages("stargazer")`
-- [Gnu Make](https://tilburgsciencehub.com/get/make) 
-- [TeX distribution](https://tilburgsciencehub.com/get/latex/?utm_campaign=referral-short)
-- For the `makefile` to work, R, Gnu make and the TeX distribution (specifically `pdflatex`) need to be made available in the system path 
-- Detailed installation instructions can be found here: [tilburgsciencehub.com](http://tilburgsciencehub.com/)
+   - R Markdown, R script
+   - R packages: Tidyverse, Dplyr, Readr
+- Gnu Make
+   - Makefile
+- Git Bash
 
+## How to run the project
+To run the entire project, type "make" in the command prompt and run. 
+
+Sidenotes: 
+- make has to be installed in order for it to work.
+- It can take some time fo the whole project to run.
+
+## Sources
+- Insideairbnb
+- 
 
 ## Notes
-- `make clean` removes all unncessary temporary files. 
-- Tested under Linux Mint (should work in any linux distro, as well as on Windows and Mac) 
+- `make clean` removes all unncessary temporary files (.csv, .pdf).  
 - IMPORTANT: In `makefile`, when using `\` to split code into multiple lines, no space should follow `\`. Otherwise Gnu make aborts with error 193. 
-- Many possible improvements remain. Comments and contributions are welcome!
+
+## Authors
+This repository is produced for the course Data Preperation and Workflow Management taught by Hannes Datta, at the Tilburg School of Economics and Management, as part of the Master's program Marketing Analytics. The repository is collabarted on by team 15, consisting of:
+- Bjorn Lauwers
+- Luc van Bree
+- Sam Villevoye
+- Sjoerd van Bijl
