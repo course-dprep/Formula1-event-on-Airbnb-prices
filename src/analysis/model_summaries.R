@@ -1,3 +1,8 @@
+install.packages("modelsummary")
+install.packages("fixest")
+install.packages("funx")
+
+
 library(fixest)
 library(tidyverse)
 library(modelsummary)

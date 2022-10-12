@@ -2,6 +2,8 @@ library(tidyverse)
 library(fixest)
 library(readr)
 library(modelsummary)
+
+
 # load the data
 filtered_spain <- read.csv("../../gen/data-preparation/output/filtered_spain.csv")
 filtered_australia <- read.csv("../../gen/data-preparation/output/filtered_australia.csv")
