@@ -9,3 +9,4 @@ analysis: data-preparation
 clean:
 	R -e "unlink('*.pdf')"
 	R -e "unlink('*.csv')"
+

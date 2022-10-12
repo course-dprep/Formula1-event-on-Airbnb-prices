@@ -9,7 +9,6 @@ all_calendar <- subset(all_calendar, select = -c(X, X.1))
 
 
 # Change column name of "listing_id" to "id"
-View(all_calendar)
 colnames(all_calendar)[which(names(all_calendar) == "listing_id")] <- "id"
 
 # Merge on id
