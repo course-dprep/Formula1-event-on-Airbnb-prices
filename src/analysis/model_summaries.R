@@ -1,6 +1,7 @@
-install.packages("modelsummary")
-install.packages("fixest")
-install.packages("funx")
+install.packages("modelsummary", repos='http://cran.us.r-project.org')
+install.packages("fixest", repos='http://cran.us.r-project.org')
+install.packages("funx", repos='http://cran.us.r-project.org')
+
 
 
 library(fixest)
