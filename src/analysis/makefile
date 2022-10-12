@@ -18,6 +18,7 @@ $(ANALYSIS)/plot_spain.pdf: $(PREP)/filtered_spain.csv plot_spain.R
 $(ANALYSIS)/table.html: $(PREP)/filtered_spain.csv $(PREP)/filtered_australia.csv model_summaries.R 
 	R --vanilla < model_summaries.R
 	
+	
 
 clean:
 	R -e "unlink('*.pdf')"
