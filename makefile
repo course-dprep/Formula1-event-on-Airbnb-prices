@@ -1,6 +1,6 @@
 all: analysis data-preparation
 
-data_preparation:
+data-preparation:
 	make -C src/data-preparation
 
 analysis: data-preparation
@@ -9,3 +9,4 @@ analysis: data-preparation
 clean:
 	R -e "unlink('*.pdf')"
 	R -e "unlink('*.csv')"
+
