@@ -1,7 +1,7 @@
 library(readr)
 library(tidyverse)
 # load 
-final_airbnb_dataset <-  read_csv("../../gen/data-preparation/output/final_airbnb_dataset.csv", col_types = cols(date = col_date(format = "%Y-%m-%d")))
+final_airbnb_dataset <-  read_csv("../../gen/data-preparation/temp/airbnb_dataset_without_outliers.csv", col_types = cols(date = col_date(format = "%Y-%m-%d")))
 
 # specify on melbourne/sydney
 australia <- c("melbourne", "sydney")
