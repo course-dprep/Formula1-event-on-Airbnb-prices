@@ -12,10 +12,6 @@ calendar_barcelona <- read.csv("../../data/calendar_barcelona.csv")
 calendar_madrid <- read.csv("../../data/calendar_madrid.csv")
 
 # Filter datasets on date (delete all after June)
-list_data <- list(calendar_melbourne, calendar_sydney, calendar_barcelona, calendar_madrid)
-func_date <- filter(date > as.Date('2022-03-25') & date < as.Date('2022-06-05'))
-lapply(list_data, func_date)
-
 calendar_melbourne <- calendar_melbourne %>% filter(date > as.Date('2022-03-25') & date < as.Date('2022-06-05'))
 calendar_sydney <- calendar_sydney %>% filter(date > as.Date('2022-03-25') & date < as.Date('2022-06-05'))
 calendar_barcelona <- calendar_barcelona %>% filter(date > as.Date('2022-03-25') & date < as.Date('2022-06-05'))
