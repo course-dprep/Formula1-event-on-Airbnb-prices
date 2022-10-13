@@ -9,7 +9,9 @@ authors: null
 # load packages
 #install.packages("tidyverse", repos ='http://cran.us.r-project.org')
 ```
-       
+# Data Exploration
+
+The following document contains some exploration of the datasets. Firstly, some of the most important variables are described with their corresponding data class. Secondly, some plots are made to explore the effect of different variables on the cities in the datasets.
 
 ```{r include=FALSE}
 library(tidyverse)
@@ -29,7 +31,7 @@ final_airbnb_dataset <- read_csv("../../gen/data-preparation/output/final_airbnb
 head(final_airbnb_dataset)
 ```
 
-
+## Variable Description
 
 ```{r table2, echo=FALSE, message=FALSE, results='asis', warnings=FALSE}
 tabl <- "
@@ -43,8 +45,9 @@ tabl <- "
 "
 cat(tabl) # table format
 ```
+## Plots
 
-
+Below you can find the plot for the average price of a listing for an Airbnb from the 25th of April till the fifth of June, for the four cities in the dataset.
 ```{r echo=FALSE}
 # make summary plot of all prices of all cities throughout the year 2022
 final_airbnb_dataset %>%
@@ -54,6 +57,7 @@ final_airbnb_dataset %>%
 
 ```
 
+Below you can find tables with the different room types and their average price, for the four cities in the dataset.
 ```{r echo=FALSE}
 # make summary plot of price per room type
 final_airbnb_dataset %>%
