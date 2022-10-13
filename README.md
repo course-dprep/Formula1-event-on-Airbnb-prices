@@ -35,10 +35,6 @@ The results of the analyses performed only confirms the hypothesis in the case o
    ├── analysis
    ├── data-preparation
    └── paper
-      ├── audit
-      ├── input
-      ├── output
-      └── temp
 └── src
    ├── analysis
    ├── data-preparation
