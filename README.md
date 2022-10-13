@@ -16,6 +16,7 @@ The data of the following cities will be used to test the research question:
 -	Barcelona (F1 race) will be compared with Madrid (No F1 Race) on 20-22 of May
 We wil also consider the influence of time in the analysis by looking at the week prior to the respective race weekend. 
 
+### Type of analysis
 The type of analysis that is used in this paper is a quasi-experiment with the difference in differences method. With this method, one can check if a treatment (in the case of this paper, a Formula 1 event) has effect on an outcome (in the case of this paper the mean Airbnb price) by comparing the average change over time in the outcome variable for the treatment group to the average change over time for the control group. 
 
 ## Analysis results
@@ -44,9 +45,9 @@ The results of the analyses performed only confirms the hypothesis in the case o
 # Example of reproducible research workflow 
 
 The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project. In this example project, the following is done: 
-1. Download and prepare data
-2. Run some analysis
-3. Analyse the results
+1. Download and prepare data from insideairbnb.com (Calender and listings data from Barcelona, Madrid, Melbounre and Sydney)
+2. Run some analysis on the cleaned and filtered data (filtered on date, removed unnecessary columns and merged all the datasets into two final datasets)
+3. Analyse the results (see if the prices are influenced by the F1 events that took place in Barcelona and Melbourne.
 
 # Dependencies
 - R 
