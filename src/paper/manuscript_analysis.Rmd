@@ -2,13 +2,11 @@
 title: "Influence of F1 on Airbnb prices"
 output: pdf_document
 date: 2022-10-12
-authors: "Sjoerd Bijl", "Bjorn Lauwers", "Sam Villevoije", "Luc van Bree"
+authors: null
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(../../gen/paper/output)
-
 ```
 
 ```{r installation, message=FALSE, warning=FALSE, include=FALSE}
@@ -17,7 +15,7 @@ install.packages("modelsummary", repos ='http://cran.us.r-project.org')
 install.packages("funx", repos ='http://cran.us.r-project.org')
 install.packages("tidyverse", repos ='http://cran.us.r-project.org')
 install.packages("cli", repos ='http://cran.us.r-project.org')
-
+install.packages("fixest", repos ='http://cran.us.r-project.org')
 ```
 
 ```{r load, message=FALSE, warning=FALSE, include=FALSE}
