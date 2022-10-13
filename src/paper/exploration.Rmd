@@ -1,18 +1,18 @@
 ---
 title: "Exploration_file"
 output: pdf_document
-date: "2022-10-12"
+date: 2022-10-12
 authors: null
 ---
 
+```{r installation, message=FALSE, warning=FALSE, include=FALSE}
+# load packages
+#install.packages("tidyverse", repos ='http://cran.us.r-project.org')
+```
        
 
 ```{r include=FALSE}
 library(tidyverse)
-library(sqldf)
-library(dplyr)
-library(vtable)
-library(rmarkdown)
 ```
 
        
@@ -58,4 +58,4 @@ final_airbnb_dataset %>%
 # make summary plot of price per room type
 final_airbnb_dataset %>%
   ggplot(aes(x = room_type ,
-             y = price, fill = room_type)) + stat_summary(fun = "mean", geom = "bar") + facet_wrap(~ city) + xlab("Type of roomp per city") + ylab("Average price of listing") + theme_classic() 
+             y = price, fill = room_type)) + stat_summary(fun = "mean", geom = "bar") + facet_wrap(~ city) + xlab("Type of room per city") + ylab("Average price of listing") + theme_classic() 
