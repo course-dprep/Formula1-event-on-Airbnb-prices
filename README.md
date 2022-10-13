@@ -59,7 +59,7 @@ The main aim of this to have a basic structure, which can be easily adjusted to 
 - GitHub
 
 ## How to run the project
-To run the entire project, type "make" in the command prompt and run. type make -n beforehand to check what changes will be made
+To run the entire project, type "make" in the command prompt and run. type make -n beforehand to check what changes will be made.
 
 Sidenotes: 
 - make has to be installed in order for it to work.
