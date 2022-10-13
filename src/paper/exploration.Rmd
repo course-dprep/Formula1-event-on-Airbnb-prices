@@ -1,0 +1,61 @@
+---
+title: "Exploration_file"
+output: pdf_document
+date: "2022-10-12"
+authors: null
+---
+
+       
+
+```{r include=FALSE}
+library(tidyverse)
+library(sqldf)
+library(dplyr)
+library(vtable)
+library(rmarkdown)
+```
+
+       
+
+```{r include=FALSE}
+# load in the data
+final_airbnb_dataset <- read_csv("../../gen/data-preparation/output/final_airbnb_dataset.csv")
+```
+
+
+
+```{r include=FALSE}
+#head statements for all listings
+head(final_airbnb_dataset)
+```
+
+
+
+```{r table2, echo=FALSE, message=FALSE, results='asis', warnings=FALSE}
+tabl <- "
+| Variable      | Description                     | Data class | 
+|---------------|:-------------------------------:|-----------:|
+| price         | Listing price of room per night | numeric    |
+| city          | City of observation             | character  |
+| date          | Date of booking                 | Date       |
+| room type     | Type of room                    | character  |                                   
+| neighbourhood | Neighbourhood of city           | character  |
+"
+cat(tabl) # table format
+```
+
+
+```{r echo=FALSE}
+# make summary plot of all prices of all cities throughout the year 2022
+final_airbnb_dataset %>%
+  ggplot(aes(x = date,
+             y = price,
+             color = city)) + stat_summary(fun = "mean", geom = "line") + xlab("Date of listing") + ylab("Average price of listing") + theme_classic()
+
+```
+
+```{r echo=FALSE}
+# make summary plot of price per room type
+final_airbnb_dataset %>%
+  ggplot(aes(x = room_type ,
+             y = price, fill = room_type)) + stat_summary(fun = "mean", geom = "bar") + facet_wrap(~ city) + xlab("Type of roomp per city") + ylab("Average price of listing") + theme_classic() 
