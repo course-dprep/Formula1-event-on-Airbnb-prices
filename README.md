@@ -66,7 +66,7 @@ Sidenotes:
 - It can take some time fo the whole project to run.
 
 ## Sources
-- Insideairbnb
+- Insideairbnb (http://insideairbnb.com/get-the-data/)
 - ESPN (https://www.espn.com/f1/story/_/id/33710400/australian-grand-prix-sets-new-formula-one-melbourne-sporting-attendance-records)
 
 ## Notes
