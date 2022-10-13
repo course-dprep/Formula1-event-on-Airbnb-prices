@@ -14,7 +14,7 @@ This project aims to compare the prices of Airbnb’s in cities where the Formul
 The data of the following cities will be used to test the research question:
 -	Melbourne (F1 race) will be compared with Sydney (No F1 race) on 8-10 of April
 -	Barcelona (F1 race) will be compared with Madrid (No F1 Race) on 20-22 of May
-We wil also consider the influence of time in the analysis by looking at the ... previous weekends and the ... weekends after the race weekend. 
+We wil also consider the influence of time in the analysis by looking at the week prior to the respective race weekend. 
 
 ## Analysis results
 With the obtained data, explored and prepared by our team,  we came to the following findings and conclusions:
@@ -42,6 +42,7 @@ With the obtained data, explored and prepared by our team,  we came to the follo
 The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project. In this example project, the following is done: 
 1. Download and prepare data
 2. Run some analysis
+3. Analyse the results
 
 # Dependencies
 - R 
@@ -50,9 +51,10 @@ The main aim of this to have a basic structure, which can be easily adjusted to 
 - Gnu Make
    - Makefile
 - Git Bash
+- GitHub
 
 ## How to run the project
-To run the entire project, type "make" in the command prompt and run. 
+To run the entire project, type "make" in the command prompt and run. type make -n beforehand to check what changes will be made
 
 Sidenotes: 
 - make has to be installed in order for it to work.
