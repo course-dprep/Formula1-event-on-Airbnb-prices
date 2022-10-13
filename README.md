@@ -30,16 +30,23 @@ The results of the analyses performed only confirms the hypothesis in the case o
 
 # Structure of the repository
 ```
-├── README.md
 ├── data
 ├── gen
-│   ├── analysis
-│   ├── data-preparation
-│   └── paper
+   ├── analysis
+   ├── data-preparation
+   └── paper
+      ├── audit
+      ├── input
+      ├── output
+      └── temp
 └── src
    ├── analysis
    ├── data-preparation
    └── paper
+├── .gitignore
+├── README.md
+├── makefile
+
 ```
 
 # Example of reproducible research workflow 
