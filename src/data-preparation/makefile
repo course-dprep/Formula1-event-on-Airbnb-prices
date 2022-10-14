@@ -26,7 +26,3 @@ $(TEMP)/airbnb_dataset_without_outliers.csv: outlier_removal.R $(TEMP)/cleaned_a
 $(OUTPUT)/filtered_spain.csv $(OUTPUT)/filtered_australia.csv: final_prep_analysis.R $(TEMP)/airbnb_dataset_without_outliers.csv 
 	R --vanilla < final_prep_analysis.R
 
-
-clean:
-	R -e "unlink('*.pdf')"
-	R -e "unlink('*.csv')"

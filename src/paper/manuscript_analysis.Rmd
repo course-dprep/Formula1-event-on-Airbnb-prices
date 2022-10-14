@@ -31,18 +31,18 @@ filtered_australia <- read_csv("../..//gen/data-preparation/output/filtered_aust
 filtered_spain <- read_csv("../..//gen/data-preparation/output/filtered_spain.csv")
 final_airbnb <- read_csv("../../gen/data-preparation/temp/airbnb_dataset_without_outliers.csv")
 ```
+
 ## Hypothesis
 
 In this paper we try to answer the hypothesis: "To what extent does the presence of a Formula 1 race weekend influence the prices of Airbnb listings in the respective city?". To answer this hypothesis, two datasets of the countries Australia and Spain are used. For each country, the mean Airbnb price of two cities are compared with each other during the Formula 1 weekend that was held in one of the cities ( so for each country there was one Formula 1 event). The goal is to show that the city where the Formula 1 event was held, had significantly higher mean prices during the event.
 
 ## Type of analysis
 
-The type of analysis that is used in this paper is a quasi-experiment with the difference in differences method. With this method, one can check if a treatment (in the case of this paper a Formula 1 event) has effect on an outcome (in the case of this paper the mean Airbnb price) by comparing the average change over time in the outcome variable for the treatment group to the average change over time for the control group. 
+The type of analysis that is used in this paper is a quasi-experiment with the difference in differences method. With this method, one can check if a treatment (in the case of this paper a Formula 1 event) has effect on an outcome (in the case of this paper the mean Airbnb price) by comparing the average change over time in the outcome variable for the treatment group to the average change over time for the control group.
 
 ## Checking the assumptions
 
-To check whether or not a difference in differences analysis can be performed, assumptions must be checked. For the difference in differences method the parallel trends assumption needs to be checked: This means that without a “treatment” (the Formula 1 event in the case of this paper) the differences between the cities must remain the same.
-As can seen in the plots below, the two cities from both countries are parallel to each other and therefore it can be stated that the assumption for difference in differences analysis in this case is met.
+To check whether or not a difference in differences analysis can be performed, assumptions must be checked. For the difference in differences method the parallel trends assumption needs to be checked: This means that without a "treatment" (the Formula 1 event in the case of this paper) the differences between the cities must remain the same. As can seen in the plots below, the two cities from both countries are parallel to each other and therefore it can be stated that the assumption for difference in differences analysis in this case is met.
 
 ```{r plot_spain, echo=FALSE, message=FALSE, warning=FALSE}
 # make new dataframe to calculate average for spain
@@ -71,13 +71,14 @@ ggplot(grp_avg_australia, aes(x = date, y = price, color = factor(event_city), g
   geom_line() 
 
 ```
+
 ## Difference in differences with and without confounds
 
-To check whether or not having a Formula 1 event versus no event significantly alters the price of Airbnb’s, multiple difference in differences analyses are performed. Firstly, one analysis for each country the Formula 1 event was held and secondly the same analyses are run with the confound “accommodates” added. This confound is added to check whether or not the quantity of people that can stay in one Airbnb residence influences the output.
+To check whether or not having a Formula 1 event versus no event significantly alters the price of Airbnb's, multiple difference in differences analyses are performed. Firstly, one analysis for each country the Formula 1 event was held and secondly the same analyses are run with the confound "accommodates" added. This confound is added to check whether or not the quantity of people that can stay in one Airbnb residence influences the output.
 
-As can seen in the output below, the price of an Airbnb is significantly higher (p<0,01) in Melbourne than Sydney during the Formula 1 event. This difference is even bigger (p<0.001) with the added confound. 
+As can seen in the output below, the price of an Airbnb is significantly higher (p\<0,01) in Melbourne than Sydney during the Formula 1 event. This difference is even bigger (p\<0.001) with the added confound.
 
-The output of Spain shows a significantly lower (p<0.001)  mean Airbnb price during a Formula 1 event in Barcelona compared with Madrid. The difference is smaller, yet still significant (p<0.001), with the “accommodates” confound added. 
+The output of Spain shows a significantly lower (p\<0.001) mean Airbnb price during a Formula 1 event in Barcelona compared with Madrid. The difference is smaller, yet still significant (p\<0.001), with the "accommodates" confound added.
 
 ```{r modelsummary, message=FALSE, warning=FALSE, include=FALSE}
 # Estimate (Australia)
@@ -124,7 +125,7 @@ models  <- list('Australia' = model_1,
 #table with models
 modelsummary(models, coef_map = cm, stars = TRUE)
 ```
-## Conclusion 
+
+## Conclusion
 
 The results of the analyses performed only confirms the hypothesis in the case of the Formula 1 event that was held in Australia. In that case, the mean Airbnb price of the city where the event was held (Melbourne) was higher than the city (Sydney) where no event was held. The dataset of Spain showed opposite results. The mean price Airbnb of the city where no event was held (Madrid), was higher than the city where the event was held (Barcelona). This went in against the hypothesis.
-
