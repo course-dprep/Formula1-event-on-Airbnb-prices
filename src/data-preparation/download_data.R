@@ -1,3 +1,6 @@
+install.packages("tidyverse")
+install.packages("dplyr")
+install.packages("readr")
 library(tidyverse)
 
 # download all listings files

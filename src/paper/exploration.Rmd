@@ -6,8 +6,7 @@ authors: null
 ---
 
 ```{r installation, message=FALSE, warning=FALSE, include=FALSE}
-# load packages
-#install.packages("tidyverse", repos ='http://cran.us.r-project.org')
+install.packages("cat")
 ```
 # Data Exploration
 
@@ -15,6 +14,7 @@ The following document contains some exploration of the datasets. Firstly, some 
 
 ```{r include=FALSE}
 library(tidyverse)
+library(cat)
 ```
 
        
