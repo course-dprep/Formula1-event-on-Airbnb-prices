@@ -12,8 +12,3 @@ $(ANALYSIS)/plot_australia.pdf: $(PREP)/filtered_australia.csv plot_australia.R
 $(ANALYSIS)/plot_spain.pdf: $(PREP)/filtered_spain.csv plot_spain.R
 	R --vanilla < plot_spain.R
 	
-
-	
-clean:
-	R -e "unlink('*.pdf')"
-	R -e "unlink('*.csv')"

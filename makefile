@@ -9,7 +9,4 @@ analysis: data-preparation
 paper: data-preparation analysis
 	make -C src/paper
 	
-clean:
-	R -e "unlink('*.pdf')"
-	R -e "unlink('*.csv')"
 
