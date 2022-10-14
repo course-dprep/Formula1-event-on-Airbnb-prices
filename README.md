@@ -19,12 +19,6 @@ We wil also consider the influence of time in the analysis by looking at the wee
 ### Type of analysis
 The type of analysis that is used in this paper is a quasi-experiment with the difference in differences method. With this method, one can check if a treatment (in the case of this paper, a Formula 1 event) has effect on an outcome (in the case of this paper the mean Airbnb price) by comparing the average change over time in the outcome variable for the treatment group to the average change over time for the control group. 
 
-## Analysis results
-With the obtained data, explored and prepared by our team,  we came to the following findings and conclusions:
-
-- 
--
--
 ## Conclusion analysis
 The results of the analyses performed only confirms the hypothesis in the case of the Formula 1 event that was held in Australia. In that case, the mean Airbnb price of the city where the event was held (Melbourne) was higher than the city (Sydney) where no event was held. The dataset of Spain showed opposite results. The mean price Airbnb of the city where no event was held (Madrid), was higher than the city where the event was held (Barcelona). This went in against the hypothesis.
 
