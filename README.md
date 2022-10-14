@@ -73,7 +73,6 @@ Sidenotes:
 - ESPN (https://www.espn.com/f1/story/_/id/33710400/australian-grand-prix-sets-new-formula-one-melbourne-sporting-attendance-records)
 
 ## Notes
-- `make clean` removes all unncessary temporary files (.csv, .pdf).  
 - IMPORTANT: In `makefile`, when using `\` to split code into multiple lines, no space should follow `\`. Otherwise Gnu make aborts with error 193. 
 
 ## Authors
