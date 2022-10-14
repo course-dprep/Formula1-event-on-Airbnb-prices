@@ -1,6 +1,6 @@
-install.packages("tidyverse")
-install.packages("dplyr")
-install.packages("readr")
+install.packages("tidyverse", repos='http://cran.us.r-project.org')
+install.packages("dplyr", repos='http://cran.us.r-project.org')
+install.packages("readr", repos='http://cran.us.r-project.org')
 library(tidyverse)
 
 # download all listings files
