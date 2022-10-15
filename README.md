@@ -74,4 +74,4 @@ This repository is produced for the course Data Preperation and Workflow Managem
 - Bjorn Lauwers
 - Luc van Bree
 - Sam Villevoye
-- Sjoerd van Bijl
+- Sjoerd Bijl
