@@ -17,7 +17,7 @@ The data of the following cities will be used to test the research question:
 We wil also consider the influence of time in the analysis by looking at the week prior to the respective race weekend. 
 
 ### Variable types
-```
+
 | Variable      | Description                     | Data class | 
 |---------------|:-------------------------------:|-----------:|
 | price         | Listing price of room per night | numeric    |
@@ -25,8 +25,7 @@ We wil also consider the influence of time in the analysis by looking at the wee
 | date          | Date of booking                 | Date       |
 | room type     | Type of room                    | character  |                                   
 | neighbourhood | Neighbourhood of city           | character  |
-"
-```
+
 
 ### Type of analysis
 The type of analysis that is used in this paper is a quasi-experiment with the difference in differences method. With this method, one can check if a treatment (in the case of this paper, a Formula 1 event) has effect on an outcome (in the case of this paper the mean Airbnb price) by comparing the average change over time in the outcome variable for the treatment group to the average change over time for the control group. 
