@@ -18,4 +18,4 @@ grp_avg_spain <-
 ggplot(grp_avg_spain, aes(x = date, y = price, color = factor(event_city), group = event_city )) + 
   geom_line() 
 
-ggsave(filename = "../../gen/analysis/output/plot_spain.pdf", width = 10, height = 8, dpi = 150, units = "in") 
+ggsave(filename = "../../gen/analysis/output/plot_spain.png",  width = 15, height = 6, dpi = 100, units = "cm")

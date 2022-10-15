@@ -51,4 +51,4 @@ models  <- list('Australia' = model_1,
                 'Spain confounds' = model_4)
 
 #table with models
-modelsummary(models, coef_map = cm, stars = TRUE, output = "../../gen/analysis/output/table.html", width = 10, height = 8, dpi = 150, units = "in")
+modelsummary(models, coef_map = cm, stars = TRUE, output = "../../gen/analysis/output/table.png", width = 10, height = 8, dpi = 20, units = "cm")

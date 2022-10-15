@@ -1,6 +1,5 @@
 library(tidyverse)
-library(fixest)
-library(modelsummary)
+
 
 filtered_australia <- read.csv("../../gen/data-preparation/output/filtered_australia.csv")
 
@@ -19,7 +18,7 @@ grp_avg_australia <-
 ggplot(grp_avg_australia, aes(x = date, y = price, color = factor(event_city), group = event_city )) + 
   geom_line() 
 
-ggsave(filename = "../../gen/analysis/output/plot_australia.pdf", width = 10, height = 8, dpi = 150, units = "in") 
+ggsave(filename = "../../gen/analysis/output/plot_australia.png", width = 15, height = 6, dpi = 100, units = "cm") 
 
 
 
