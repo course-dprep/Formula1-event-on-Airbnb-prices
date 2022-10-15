@@ -2,20 +2,11 @@
 title: "Influence of F1 on Airbnb prices"
 output: pdf_document
 date: 2022-10-12
-authors: null
+authors: "Bjorn Lauwers, Luc van Bree, Sam Villevoye, Sjoerd Bijl"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{r installation, message=FALSE, warning=FALSE, include=FALSE}
-# load packages
-install.packages("modelsummary", repos ='http://cran.us.r-project.org')
-install.packages("funx", repos ='http://cran.us.r-project.org')
-install.packages("tidyverse", repos ='http://cran.us.r-project.org')
-install.packages("cli", repos ='http://cran.us.r-project.org')
-install.packages("fixest", repos ='http://cran.us.r-project.org')
 ```
 
 ```{r load, message=FALSE, warning=FALSE, include=FALSE}
@@ -23,13 +14,6 @@ library(modelsummary)
 library(tidyverse)
 library(fixest)
 library(cli)
-```
-
-```{r load_data, message=FALSE, warning=FALSE, include=FALSE}
-#load data
-filtered_australia <- read_csv("../..//gen/data-preparation/output/filtered_australia.csv")
-filtered_spain <- read_csv("../..//gen/data-preparation/output/filtered_spain.csv")
-final_airbnb <- read_csv("../../gen/data-preparation/temp/airbnb_dataset_without_outliers.csv")
 ```
 
 ## Hypothesis
@@ -44,33 +28,10 @@ The type of analysis that is used in this paper is a quasi-experiment with the d
 
 To check whether or not a difference in differences analysis can be performed, assumptions must be checked. For the difference in differences method the parallel trends assumption needs to be checked: This means that without a "treatment" (the Formula 1 event in the case of this paper) the differences between the cities must remain the same. As can seen in the plots below, the two cities from both countries are parallel to each other and therefore it can be stated that the assumption for difference in differences analysis in this case is met.
 
-```{r plot_spain, echo=FALSE, message=FALSE, warning=FALSE}
-# make new dataframe to calculate average for spain
-grp_avg_spain <-
-  filtered_spain %>%
-  group_by(event_city, date) %>%
-  summarise(price = mean(price)) %>%
-  arrange(date, event_city)
+![spain.](../../gen/analysis/output/plot_spain.png)
 
+![australia](../../gen/analysis/output/plot_australia.png)
 
-#plot spain 
-ggplot(grp_avg_spain, aes(x = date, y = price, color = factor(event_city), group = event_city )) + 
-  geom_line() 
-```
-
-```{r plot_australia, echo=FALSE, message=FALSE, warning=FALSE}
-# make new dataframe to calculate average for australia
-grp_avg_australia <-
-  filtered_australia %>%
-  group_by(event_city, date) %>%
-  summarise(price = mean(price)) %>%
-  arrange(date, event_city)
-
-
-ggplot(grp_avg_australia, aes(x = date, y = price, color = factor(event_city), group = event_city )) + 
-  geom_line() 
-
-```
 
 ## Difference in differences with and without confounds
 
@@ -80,51 +41,7 @@ As can seen in the output below, the price of an Airbnb is significantly higher 
 
 The output of Spain shows a significantly lower (p\<0.001) mean Airbnb price during a Formula 1 event in Barcelona compared with Madrid. The difference is smaller, yet still significant (p\<0.001), with the "accommodates" confound added.
 
-```{r modelsummary, message=FALSE, warning=FALSE, include=FALSE}
-# Estimate (Australia)
-model_1 <- feols(price ~ formula1 + event_city + 
-                   formula1:event_city,
-                 data = filtered_australia,
-                 cluster = ~ id)
-
-# Estimate (Spain) 
-model_2 <- feols(price ~ formula1 + event_city + 
-                   formula1:event_city,
-                 data = filtered_spain,
-                 cluster = ~ id)
-
-# Estimate (Spain) with fixed effects 
-model_3 <- feols(price ~ formula1 + event_city + 
-                   formula1:event_city | accommodates,
-                 data = filtered_australia,
-                 cluster = ~ id)
-
-# Estimate (Australia) with fixed effects 
-model_4 <- feols(price ~ formula1 + event_city + 
-                   formula1:event_city | accommodates,
-                 data = filtered_spain,
-                 cluster = ~ id)
-```
-
-```{r model_input, message=FALSE, warning=FALSE, include=FALSE}
-# make output table in modelsummary 
-cm <- c('(Intercept)' = 'Constant',
-        'formula1'    = 'Formula 1 weekend',
-        'event_city'    = 'Formula 1 city',
-        'formula1:event_city' = 'Effect of formula1 difference')
-
-
-models  <- list('Australia' = model_1, 
-                'Spain' =  model_2,
-                'Australia confounds' = model_3,
-                'Spain confounds' = model_4)
-
-```
-
-```{r modeltable, echo=FALSE, message=FALSE, warning=FALSE}
-#table with models
-modelsummary(models, coef_map = cm, stars = TRUE)
-```
+![table](../../gen/analysis/output/table.png)
 
 ## Conclusion
 
