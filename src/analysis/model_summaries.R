@@ -2,7 +2,7 @@ install.packages("modelsummary", repos='http://cran.us.r-project.org')
 install.packages("fixest", repos='http://cran.us.r-project.org')
 install.packages("funx", repos='http://cran.us.r-project.org')
 install.packages("webshot", repos='http://cran.us.r-project.org')
-
+webshot::install_phantomjs()
 
 library(fixest)
 library(tidyverse)
