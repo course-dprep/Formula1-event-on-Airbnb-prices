@@ -60,7 +60,7 @@ The main aim of this to have a basic structure, which can be easily adjusted to 
 # Dependencies
 - R 
    - R Markdown, R script
-   - R packages: Tidyverse, Dplyr, Readr, Modelsummary, Fixest, Funx, Webshot
+   - R packages: Tidyverse, Modelsummary, Fixest, Funx, Webshot
 - Gnu Make
    - Makefile
 - Git Bash
